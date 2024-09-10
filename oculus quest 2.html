@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Oculus Quest 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .reasons {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .reasons a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content">
+        <h1>Oi mãe ou pai!</h1>
+        <p>Aqui é o Daniel e eu queria saber se vocês poderiam me dar o Quest 2.</p>
+        <button onclick="sim()">Sim</button>
+        <button onclick="nao()">Não</button>
+        <br>
+        <button onclick="motivos()">Motivos e itens adicionais para o Quest 2</button>
+
+        <div id="motivos-section" class="hidden reasons">
+            <h2>Motivos para o Quest 2:</h2>
+            <ul>
+                <li>Tem como pegar jogos de graça, então vocês não vão estar gastando muito dinheiro.</li>
+                <li>Vou me exercitar muito, já que vou ter que jogar em pé.</li>
+                <li>Vai precisar comprar uma capinha, mas não é o olho da cara, custa uns <a href="https://produto.mercadolivre.com.br/MLB-4268321002-capa-protetora-de-acessorios-para-vr-oculus-quest2-cor-preta-_JM?attributes=COLOR_SECONDARY_COLOR:Rml4" target="_blank">R$ 120</a>.</li>
+                <li>Vou precisar de um powerbank, já que a bateria é ruim. Custa em torno de <a href="https://produto.mercadolivre.com.br/MLB-4458022858-power-bank-20000mah-carregador-rapido-com-display-portatil-_JM?attributes=COLOR_SECONDARY_COLOR:QnJhbmNv" target="_blank">R$ 90</a>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function sim() {
+            document.getElementById("content").innerHTML = `
+                <h1>SÉRIO!</h1>
+                <p>Ok, esse é o site mais barato que achei do Oculus Quest 2:</p>
+                <a href="https://br.octoshop.com/buybox-meta-quest-2-256gb-com-controles-touch-realidade-virtual.html?srsltid=AfmBOoqu_aTB9JMjrB35jaKvYWFku8CF5wWrAUBay9la3wPGuAfQE3ZkxbU" target="_blank">Clique aqui para ver o site</a>
+                <p>Ok mãe ou pai, obrigado e tchau!</p>
+            `;
+        }
+
+        function nao() {
+            document.getElementById("content").innerHTML = `
+                <h1>Por que não?</h1>
+                <button onclick="naoMerece()">Você não merece</button>
+                <button onclick="muitoCaro()">Tá muito caro</button>
+            `;
+        }
+
+        function naoMerece() {
+            window.location.href = "https://youtu.be/9I_I87v2swY?si=JyxVWRi0cGtdzcAV";
+        }
+
+        function muitoCaro() {
+            document.getElementById("content").innerHTML = `
+                <h1>Relaxa!</h1>
+                <p>Esse site aqui é o mais barato:</p>
+                <a href="https://br.octoshop.com/buybox-meta-quest-2-256gb-com-controles-touch-realidade-virtual.html?srsltid=AfmBOoqu_aTB9JMjrB35jaKvYWFku8CF5wWrAUBay9la3wPGuAfQE3ZkxbU" target="_blank">Clique aqui para ver o site</a>
+                <p>Sabia que eles pagam até a taxa se for taxado? Ok, agora tchau!</p>
+            `;
+        }
+
+        function motivos() {
+            const motivosSection = document.getElementById("motivos-section");
+            if (motivosSection.classList.contains("hidden")) {
+                motivosSection.classList.remove("hidden");
+            } else {
+                motivosSection.classList.add("hidden");
+            }
+        }
+    </script>
+
+</body>
+</html>
